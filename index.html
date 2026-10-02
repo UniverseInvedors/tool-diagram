@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagram Builder — Free Online Flowchart & Sequence Diagram Maker | Universe Tools</title>
+  <meta name="description" content="Create flowcharts, sequence diagrams, ER diagrams, class diagrams and more online free. Write Mermaid syntax and see diagrams render instantly. Export as SVG." />
+  <meta name="keywords" content="online diagram maker, flowchart creator free, sequence diagram tool, mermaid diagram online, ER diagram generator, free diagram tool" />
+  <link rel="canonical" href="https://diagram.universeinvedors.tech/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Diagram Builder — Free Flowchart & Diagram Tool" />
+  <meta property="og:description" content="Create flowcharts, sequence diagrams and ER diagrams from text. Instant preview, SVG export. Free online." />
+  <meta property="og:url" content="https://diagram.universeinvedors.tech/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="icon" href="https://universeinvedors.tech/favicon.ico" sizes="any" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Diagram Builder","description":"Create flowcharts, sequence diagrams, ER diagrams and more from Mermaid syntax. Free online tool with SVG export.","url":"https://diagram.universeinvedors.tech","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <meta name="google-adsense-account" content="ca-pub-8759032363251002" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8759032363251002" crossorigin="anonymous"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0d1117;--surface:#161b22;--border:rgba(255,255,255,.08);--text:#e6edf3;--muted:#8b949e;--violet:#8b5cf6;--font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace}
+    html{font-size:16px}
+    body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100dvh;display:flex;flex-direction:column}
+    a{color:var(--violet)}
+    .topbar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;border-bottom:1px solid var(--border);background:rgba(13,17,23,.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;flex-wrap:wrap}
+    .logo{font-size:.85rem;font-weight:700;white-space:nowrap}
+    .examples{display:flex;gap:.3rem;flex-wrap:wrap;flex:1}
+    .ex{padding:.25rem .6rem;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);transition:all .15s;white-space:nowrap}
+    .ex:hover,.ex.active{background:rgba(139,92,246,.15);border-color:rgba(139,92,246,.4);color:var(--violet)}
+    .actions{display:flex;gap:.4rem}
+    .btn{padding:.35rem .85rem;border-radius:7px;font-size:.78rem;font-weight:600;border:none;cursor:pointer;transition:all .15s}
+    .btn-dl{background:var(--violet);color:#fff}
+    .btn-dl:hover{background:#7c3aed}
+    .btn-copy{background:rgba(255,255,255,.07);color:var(--muted);border:1px solid var(--border)}
+    .btn-copy:hover{background:rgba(255,255,255,.12);color:var(--text)}
+    .main{display:flex;flex:1;overflow:hidden;height:calc(100dvh - 48px)}
+    .editor-pane{width:38%;display:flex;flex-direction:column;border-right:1px solid var(--border)}
+    .preview-pane{flex:1;display:flex;flex-direction:column;overflow:hidden}
+    .pane-header{padding:.4rem .75rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+    textarea{flex:1;width:100%;padding:1rem;font-family:var(--mono);font-size:13px;line-height:1.6;background:#0d1117;color:#e6edf3;border:none;resize:none;outline:none}
+    .preview-area{flex:1;overflow:auto;padding:1.5rem;display:flex;align-items:flex-start;justify-content:center;background:rgba(255,255,255,.01)}
+    .preview-area svg{max-width:100%;height:auto}
+    .error-msg{color:#f87171;font-size:.8rem;padding:1rem;font-family:var(--mono);background:rgba(239,68,68,.06);border-radius:8px;margin:1rem;border:1px solid rgba(239,68,68,.2)}
+    .ad-slot{padding:.5rem;text-align:center;border-top:1px solid var(--border)}
+    @media(max-width:640px){
+      .main{flex-direction:column;height:auto}
+      .editor-pane,.preview-pane{width:100%;height:45vh}
+      .editor-pane{border-right:none;border-bottom:1px solid var(--border)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">🔀 <a href="https://universeinvedors.tech/tools" style="color:inherit;text-decoration:none">Universe Tools</a> / Diagram Builder</div>
+  <div class="examples">
+    <button class="ex active" onclick="loadEx('flowchart',this)">Flowchart</button>
+    <button class="ex" onclick="loadEx('sequence',this)">Sequence</button>
+    <button class="ex" onclick="loadEx('class',this)">Class</button>
+    <button class="ex" onclick="loadEx('er',this)">ER Diagram</button>
+    <button class="ex" onclick="loadEx('state',this)">State</button>
+    <button class="ex" onclick="loadEx('gantt',this)">Gantt</button>
+  </div>
+  <div class="actions">
+    <button class="btn btn-copy" onclick="copySVG()">Copy SVG</button>
+    <button class="btn btn-dl" onclick="downloadSVG()">↓ Download</button>
+  </div>
+</header>
+
+<main class="main">
+  <div class="editor-pane">
+    <div class="pane-header">Mermaid Syntax</div>
+    <textarea id="editor" spellcheck="false" oninput="scheduleRender()"></textarea>
+  </div>
+  <div class="preview-pane">
+    <div class="pane-header">Preview</div>
+    <div class="preview-area" id="preview"></div>
+  </div>
+</main>
+
+<div class="ad-slot" aria-label="Advertisement">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8759032363251002" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
+mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' })
+window.__mermaid = mermaid
+
+const EXAMPLES = {
+  flowchart: `flowchart TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[✅ Great!]
+    B -->|No| D[Debug the issue]
+    D --> E[Fix the bug]
+    E --> B
+    C --> F[Deploy 🚀]`,
+  sequence: `sequenceDiagram
+    participant User
+    participant API
+    participant DB
+    User->>API: POST /login
+    API->>DB: SELECT user WHERE email=?
+    DB-->>API: User record
+    API->>API: Validate password
+    API-->>User: 200 OK + JWT token`,
+  class: `classDiagram
+    class Animal {
+      +String name
+      +int age
+      +makeSound() String
+    }
+    class Dog {
+      +fetch() void
+    }
+    class Cat {
+      +purr() void
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat`,
+  er: `erDiagram
+    USER {
+      int id PK
+      string email
+      string name
+      datetime created_at
+    }
+    ORDER {
+      int id PK
+      int user_id FK
+      float total
+      string status
+    }
+    USER ||--o{ ORDER : places`,
+  state: `stateDiagram-v2
+    [*] --> Idle
+    Idle --> Loading : fetch()
+    Loading --> Success : data received
+    Loading --> Error : request failed
+    Error --> Idle : retry
+    Success --> [*]`,
+  gantt: `gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Design
+    Wireframes      :a1, 2024-01-01, 7d
+    UI Design       :a2, after a1, 10d
+    section Dev
+    Frontend        :b1, after a2, 14d
+    Backend         :b2, after a2, 14d
+    section Launch
+    QA Testing      :c1, after b1, 7d
+    Deploy          :c2, after c1, 2d`
+}
+
+let renderTimer = null
+let currentSVG = ''
+
+window.loadEx = (name, btn) => {
+  document.getElementById('editor').value = EXAMPLES[name]
+  document.querySelectorAll('.ex').forEach(e => e.classList.remove('active'))
+  btn.classList.add('active')
+  render()
+}
+
+async function render() {
+  const code = document.getElementById('editor').value.trim()
+  const preview = document.getElementById('preview')
+  if (!code) { preview.innerHTML = '<p style="color:var(--muted);font-size:.85rem">Start typing Mermaid syntax…</p>'; return }
+  try {
+    const id = `m${Date.now()}`
+    const { svg } = await window.__mermaid.render(id, code)
+    currentSVG = svg
+    preview.innerHTML = svg
+  } catch(e) {
+    preview.innerHTML = `<div class="error-msg">⚠️ Syntax error\n${e.message||e}</div>`
+  }
+}
+
+window.scheduleRender = () => {
+  clearTimeout(renderTimer)
+  renderTimer = setTimeout(render, 500)
+}
+
+window.copySVG = () => {
+  if (!currentSVG) return
+  navigator.clipboard.writeText(currentSVG).then(() => {
+    const b = document.querySelector('.btn-copy')
+    b.textContent = 'Copied!'
+    setTimeout(() => b.textContent = 'Copy SVG', 1500)
+  })
+}
+
+window.downloadSVG = () => {
+  if (!currentSVG) return
+  const a = document.createElement('a')
+  a.href = 'data:image/svg+xml,' + encodeURIComponent(currentSVG)
+  a.download = 'diagram.svg'
+  a.click()
+}
+
+// Init
+document.getElementById('editor').value = EXAMPLES.flowchart
+render()
+</script>
+</body>
+</html>
