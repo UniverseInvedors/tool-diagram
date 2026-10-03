@@ -1,296 +1,530 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diagram Builder — Free Online Flowchart, Sequence Diagram and ER Diagram Maker | Universe Invedors Tools</title>
-  <meta name="description" content="Create flowcharts, sequence diagrams, ER diagrams, class diagrams, state machines and Gantt charts online free. Mermaid.js powered. Export as SVG. No sign-up required." />
-  <meta name="keywords" content="flowchart maker free online, sequence diagram tool, ER diagram generator online, Mermaid diagram editor, free diagram creator, online flowchart tool no signup" />
-  <link rel="canonical" href="https://diagram.universeinvedors.tech/" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Diagram Builder — Free Flowchart & Diagram Tool" />
-  <meta property="og:description" content="Create flowcharts, sequence diagrams and ER diagrams from text. Instant preview, SVG export. Free online." />
-  <meta property="og:url" content="https://diagram.universeinvedors.tech/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0d1117" />
-  <link rel="icon" href="https://universeinvedors.tech/favicon.ico" sizes="any" />
-  <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Diagram Builder",
-    "url": "https://diagram.universeinvedors.tech",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Web",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-    "publisher": {
-      "@type": "Organization",
-      "name": "Universe Invedors",
-      "url": "https://universeinvedors.tech",
-      "logo": "https://universeinvedors.tech/logo.png",
-      "sameAs": [
-        "https://linkedin.com/company/universe-invedors",
-        "https://github.com/UniverseInvedors"
-      ]
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Universe Invedors", "item": "https://universeinvedors.tech"},
-      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://universeinvedors.tech/tools"},
-      {"@type": "ListItem", "position": 3, "name": "Diagram Builder", "item": "https://diagram.universeinvedors.tech"}
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Diagram Builder",
-    "url": "https://diagram.universeinvedors.tech",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Universe Invedors Tools",
-      "url": "https://universeinvedors.tech"
-    }
-  }
-]
-</script>
-  <meta name="google-adsense-account" content="ca-pub-8759032363251002" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8759032363251002" crossorigin="anonymous"></script>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0d1117;--surface:#161b22;--border:rgba(255,255,255,.08);--text:#e6edf3;--muted:#8b949e;--violet:#8b5cf6;--font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace}
-    html{font-size:16px}
-    body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100dvh;display:flex;flex-direction:column}
-    a{color:var(--violet)}
-    .topbar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;border-bottom:1px solid var(--border);background:rgba(13,17,23,.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;flex-wrap:wrap}
-    .logo{font-size:.85rem;font-weight:700;white-space:nowrap}
-    .examples{display:flex;gap:.3rem;flex-wrap:wrap;flex:1}
-    .ex{padding:.25rem .6rem;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);transition:all .15s;white-space:nowrap}
-    .ex:hover,.ex.active{background:rgba(139,92,246,.15);border-color:rgba(139,92,246,.4);color:var(--violet)}
-    .actions{display:flex;gap:.4rem}
-    .btn{padding:.35rem .85rem;border-radius:7px;font-size:.78rem;font-weight:600;border:none;cursor:pointer;transition:all .15s}
-    .btn-dl{background:var(--violet);color:#fff}
-    .btn-dl:hover{background:#7c3aed}
-    .btn-copy{background:rgba(255,255,255,.07);color:var(--muted);border:1px solid var(--border)}
-    .btn-copy:hover{background:rgba(255,255,255,.12);color:var(--text)}
-    .main{display:flex;flex:1;overflow:hidden;height:calc(100dvh - 48px)}
-    .editor-pane{width:38%;display:flex;flex-direction:column;border-right:1px solid var(--border)}
-    .preview-pane{flex:1;display:flex;flex-direction:column;overflow:hidden}
-    .pane-header{padding:.4rem .75rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
-    textarea{flex:1;width:100%;padding:1rem;font-family:var(--mono);font-size:13px;line-height:1.6;background:#0d1117;color:#e6edf3;border:none;resize:none;outline:none}
-    .preview-area{flex:1;overflow:auto;padding:1.5rem;display:flex;align-items:flex-start;justify-content:center;background:rgba(255,255,255,.01)}
-    .preview-area svg{max-width:100%;height:auto}
-    .error-msg{color:#f87171;font-size:.8rem;padding:1rem;font-family:var(--mono);background:rgba(239,68,68,.06);border-radius:8px;margin:1rem;border:1px solid rgba(239,68,68,.2)}
-    .ad-slot{padding:.5rem;text-align:center;border-top:1px solid var(--border)}
-    @media(max-width:640px){
-      .main{flex-direction:column;height:auto}
-      .editor-pane,.preview-pane{width:100%;height:45vh}
-      .editor-pane{border-right:none;border-bottom:1px solid var(--border)}
-    }
-  </style>  <meta name="author" content="Universe Invedors" />
-  <meta name="publisher" content="Universe Invedors" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <link rel="sitemap" type="application/xml" href="https://diagram.universeinvedors.tech/sitemap.xml" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Diagram Builder — Free Online Flowchart, Sequence Diagram and ER Diagram Maker | Universe Invedors Tools</title>
+<meta name="description" content="Create flowcharts, sequence diagrams, ER diagrams, class diagrams and more online free. Mermaid.js + Nomnoml + Graphviz powered. Export SVG or PNG. No sign-up."/>
+<meta name="keywords" content="flowchart maker free online,sequence diagram tool,ER diagram generator,mermaid diagram editor,nomnoml diagram,graphviz online,free diagram creator"/>
+<link rel="canonical" href="https://diagram.universeinvedors.tech/"/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<meta name="author" content="Universe Invedors"/>
+<meta property="og:title" content="Diagram Builder — Free Online Flowchart and Diagram Tool"/>
+<meta property="og:description" content="Create flowcharts, sequence diagrams and more. Mermaid, Nomnoml and Graphviz engines. Export SVG. Free."/>
+<meta property="og:url" content="https://diagram.universeinvedors.tech/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://universeinvedors.tech/og-image.jpg"/>
+<meta property="og:site_name" content="Universe Invedors Tools"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://universeinvedors.tech/og-image.jpg"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="icon" href="https://universeinvedors.tech/favicon.ico" sizes="any"/>
+<meta name="theme-color" content="#090c13"/>
+<meta name="google-adsense-account" content="ca-pub-8759032363251002"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8759032363251002" crossorigin="anonymous"></script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Diagram Builder","url":"https://diagram.universeinvedors.tech","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Universe Invedors","url":"https://universeinvedors.tech"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Universe Invedors","item":"https://universeinvedors.tech"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://universeinvedors.tech/tools"},{"@type":"ListItem","position":3,"name":"Diagram Builder","item":"https://diagram.universeinvedors.tech"}]}]</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#090c13;--surf:#0f1420;--elev:#141b28;--card:#1a2235;--inp:#111827;
+  --t1:#f0f4ff;--t2:#a8b5cc;--t3:#64748b;--t4:#3d4f6e;
+  --acc:#8b5cf6;--acc-h:#a78bfa;--acc-glow:rgba(139,92,246,.25);
+  --green:#10b981;--blue:#3b82f6;--cyan:#06b6d4;
+  --border:rgba(255,255,255,.07);--bh:rgba(255,255,255,.14);--bf:rgba(139,92,246,.5);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --mono:'JetBrains Mono','Fira Code',Consolas,monospace;
+  --r:10px;--th:52px;--sw:220px;--tr:180ms cubic-bezier(.4,0,.2,1);
+}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--t1);height:100dvh;display:flex;flex-direction:column;overflow:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:3px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:6px}
 
-  <!-- Open Graph image (required for Google + social sharing previews) -->
-  <meta property="og:image" content="https://universeinvedors.tech/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Diagram Builder — Free Online Flowchart, Sequence Diagram and ER Diagram Maker" />
-  <meta property="og:site_name" content="Universe Invedors Tools" />
-  <meta property="og:locale" content="en_US" />
+/* Topbar */
+.tb{height:var(--th);background:rgba(9,12,19,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.6rem;padding:0 .85rem;flex-shrink:0;z-index:200}
+.logo{display:flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:700;color:var(--t1);text-decoration:none;white-space:nowrap;flex-shrink:0}
+.logo:hover{color:var(--acc-h);text-decoration:none}
+.etabs{display:flex;gap:.1rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r);padding:3px;overflow-x:auto;flex-shrink:1}
+.et{padding:.26rem .65rem;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--t3);white-space:nowrap;transition:all var(--tr)}
+.et:hover{background:rgba(255,255,255,.06);color:var(--t2)}
+.et.active{background:var(--acc);color:#fff;box-shadow:0 0 10px var(--acc-glow)}
+.sp{flex:1}
+.btn{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border-radius:var(--r);font-size:.75rem;font-weight:600;cursor:pointer;border:none;transition:all var(--tr);white-space:nowrap}
+.bg{background:rgba(255,255,255,.05);color:var(--t2);border:1px solid var(--border)}
+.bg:hover{background:rgba(255,255,255,.09);border-color:var(--bh);color:var(--t1)}
+.bp{background:var(--acc);color:#fff}
+.bp:hover{background:var(--acc-h);box-shadow:0 0 14px var(--acc-glow)}
+.bsm{padding:.26rem .6rem;font-size:.68rem}
 
-  <!-- Twitter image -->
-  <meta name="twitter:image" content="https://universeinvedors.tech/og-image.jpg" />
-  <meta name="twitter:site" content="@universeinvedors" />
-  <meta name="twitter:creator" content="@universeinvedors" />
-  <meta name="twitter:label1" content="Category" />
-  <meta name="twitter:data1" content="Free Developer Tool" />
+/* Sidebar */
+.sb{width:var(--sw);background:var(--surf);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}
+.sb-section{padding:.6rem .6rem .2rem;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t4)}
+.sbbtn{display:flex;align-items:center;gap:.55rem;padding:.42rem .65rem;border-radius:8px;font-size:.78rem;font-weight:500;color:var(--t2);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;transition:all var(--tr);margin:.05rem 0}
+.sbbtn:hover{background:rgba(255,255,255,.05);color:var(--t1)}
+.sbbtn.active{background:rgba(139,92,246,.1);color:var(--acc-h);border:1px solid rgba(139,92,246,.2);font-weight:600}
+.sbbtn .ic{font-size:1rem;width:18px;text-align:center;flex-shrink:0}
 
+/* Main layout */
+.main{display:flex;flex:1;overflow:hidden}
+.ph{display:flex;align-items:center;gap:.5rem;padding:.35rem .85rem;background:var(--surf);border-bottom:1px solid var(--border);font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t3);flex-shrink:0}
+.pd{width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.pd.g{background:var(--green)}
+.phr{margin-left:auto;display:flex;gap:.3rem}
+
+/* Editor */
+.editor-wrap{display:flex;flex-direction:column;width:42%;min-width:200px;border-right:1px solid var(--border)}
+textarea#code{flex:1;width:100%;padding:.85rem;font-family:var(--mono);font-size:13px;line-height:1.6;background:var(--bg);color:var(--t1);border:none;resize:none;outline:none;tab-size:2}
+textarea#code::selection{background:rgba(139,92,246,.3)}
+
+/* Preview */
+.preview-wrap{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.preview-area{flex:1;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:1.5rem;background:rgba(255,255,255,.01)}
+.preview-area svg{max-width:100%;height:auto;filter:drop-shadow(0 4px 24px rgba(0,0,0,.4))}
+.err-msg{color:#f87171;font-size:.8rem;padding:1rem;font-family:var(--mono);background:rgba(239,68,68,.06);border-radius:8px;margin:1rem;border:1px solid rgba(239,68,68,.2);white-space:pre-wrap;word-break:break-all}
+
+/* Examples panel */
+.ex-wrap{padding:.6rem;display:flex;flex-direction:column;gap:.3rem}
+.ex-item{padding:.42rem .6rem;border-radius:8px;border:1px solid var(--border);background:var(--card);cursor:pointer;transition:all var(--tr)}
+.ex-item:hover{border-color:rgba(139,92,246,.3);background:rgba(139,92,246,.06)}
+.ex-title{font-size:.78rem;font-weight:600;color:var(--t1)}
+.ex-desc{font-size:.68rem;color:var(--t3);margin-top:.1rem}
+
+/* Status */
+.statusbar{display:flex;align-items:center;gap:.75rem;padding:.25rem .85rem;background:var(--surf);border-top:1px solid var(--border);font-size:.68rem;color:var(--t3);flex-shrink:0}
+.sdot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Resizer */
+.rsz{width:4px;background:var(--bg);cursor:col-resize;flex-shrink:0;transition:background .15s}
+.rsz:hover{background:var(--acc)}
+
+.seo-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.3rem .75rem;padding:.4rem .85rem;border-top:1px solid var(--border);background:var(--surf);font-size:.67rem;color:var(--t3);flex-shrink:0}
+.seo-footer a{color:var(--t3)}.seo-footer a:hover{color:var(--t2)}
+.sfl{display:flex;flex-wrap:wrap;gap:.2rem .6rem}
+.toasts{position:fixed;bottom:1rem;right:1rem;z-index:999;display:flex;flex-direction:column;gap:.4rem;pointer-events:none}
+.toast{padding:.55rem .9rem;border-radius:var(--r);font-size:.75rem;font-weight:600;background:var(--card);border:1px solid var(--border);color:var(--t1);box-shadow:0 8px 32px rgba(0,0,0,.5);animation:tin .22s ease;pointer-events:auto}
+.toast.ok{border-color:rgba(16,185,129,.3);color:var(--green)}.toast.err{border-color:rgba(239,68,68,.3);color:#f87171}
+@keyframes tin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){.sb{display:none}.editor-wrap{width:100%;border-right:none}.preview-wrap{display:none}}
+</style>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="logo">🔀 <a href="https://universeinvedors.tech/tools" style="color:inherit;text-decoration:none">Universe Tools</a> / Diagram Builder</div>
-  <div class="examples">
-    <button class="ex active" onclick="loadEx('flowchart',this)">Flowchart</button>
-    <button class="ex" onclick="loadEx('sequence',this)">Sequence</button>
-    <button class="ex" onclick="loadEx('class',this)">Class</button>
-    <button class="ex" onclick="loadEx('er',this)">ER Diagram</button>
-    <button class="ex" onclick="loadEx('state',this)">State</button>
-    <button class="ex" onclick="loadEx('gantt',this)">Gantt</button>
+<!-- TOPBAR -->
+<header class="tb">
+  <a href="https://universeinvedors.tech/tools" class="logo">🔀 Universe Tools <span style="color:var(--t4);font-weight:400;font-size:.75rem">/</span> <span style="color:var(--acc-h)">Diagram Builder</span></a>
+  <div class="etabs" role="tablist">
+    <button class="et active" onclick="switchEngine('mermaid',this)" role="tab">Mermaid <span style="font-size:.58rem;background:rgba(255,255,255,.15);padding:.06rem .25rem;border-radius:3px;margin-left:.2rem">v11</span></button>
+    <button class="et" onclick="switchEngine('nomnoml',this)" role="tab">Nomnoml</button>
+    <button class="et" onclick="switchEngine('railroad',this)" role="tab">Railroad</button>
   </div>
-  <div class="actions">
-    <button class="btn btn-copy" onclick="copySVG()">Copy SVG</button>
-    <button class="btn btn-dl" onclick="downloadSVG()">↓ Download</button>
+  <div class="sp"></div>
+  <div style="display:flex;gap:.4rem;align-items:center">
+    <button class="btn bg bsm" onclick="copyCode()">Copy</button>
+    <button class="btn bg bsm" onclick="copySVG()">Copy SVG</button>
+    <button class="btn bp" onclick="downloadSVG()">↓ SVG</button>
+    <button class="btn" style="background:var(--green);color:#000" onclick="downloadPNG()">↓ PNG</button>
   </div>
 </header>
 
-<main class="main">
-  <div class="editor-pane">
-    <div class="pane-header">Mermaid Syntax</div>
-    <textarea id="editor" spellcheck="false" oninput="scheduleRender()"></textarea>
-  </div>
-  <div class="preview-pane">
-    <div class="pane-header">Preview</div>
-    <div class="preview-area" id="preview"></div>
-  </div>
-</main>
+<div class="main">
 
-<div class="ad-slot" aria-label="Advertisement">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8759032363251002" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <!-- Sidebar with examples -->
+  <aside class="sb" aria-label="Diagram examples">
+    <div class="sb-section">Mermaid</div>
+    <button class="sbbtn active" onclick="loadEx('flow')"><span class="ic">🔀</span>Flowchart</button>
+    <button class="sbbtn" onclick="loadEx('seq')"><span class="ic">↔</span>Sequence</button>
+    <button class="sbbtn" onclick="loadEx('class')"><span class="ic">📦</span>Class</button>
+    <button class="sbbtn" onclick="loadEx('er')"><span class="ic">🗃</span>ER Diagram</button>
+    <button class="sbbtn" onclick="loadEx('state')"><span class="ic">⚙</span>State Machine</button>
+    <button class="sbbtn" onclick="loadEx('gantt')"><span class="ic">📅</span>Gantt Chart</button>
+    <button class="sbbtn" onclick="loadEx('git')"><span class="ic">🌿</span>Git Graph</button>
+    <button class="sbbtn" onclick="loadEx('pie')"><span class="ic">🥧</span>Pie Chart</button>
+    <button class="sbbtn" onclick="loadEx('mindmap')"><span class="ic">🧠</span>Mind Map</button>
+    <div class="sb-section" style="margin-top:.4rem">Nomnoml</div>
+    <button class="sbbtn" onclick="loadEx('nom_uml')"><span class="ic">📐</span>UML Classes</button>
+    <button class="sbbtn" onclick="loadEx('nom_flow')"><span class="ic">➡</span>Process Flow</button>
+    <div class="sb-section" style="margin-top:.4rem">Options</div>
+    <div style="padding:.4rem .6rem">
+      <div style="font-size:.7rem;color:var(--t3);margin-bottom:.3rem">Theme</div>
+      <select id="theme-sel" onchange="changeTheme(this.value)" style="width:100%;padding:.35rem .55rem;background:var(--inp);border:1px solid var(--border);border-radius:8px;color:var(--t1);font-size:.78rem;outline:none">
+        <option value="dark">Dark</option>
+        <option value="default">Light</option>
+        <option value="forest">Forest</option>
+        <option value="neutral">Neutral</option>
+        <option value="base">Base</option>
+      </select>
+    </div>
+    <div style="padding:.3rem .6rem">
+      <div style="font-size:.7rem;color:var(--t3);margin-bottom:.3rem">Auto-render</div>
+      <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer">
+        <input type="checkbox" id="auto-render" checked style="accent-color:var(--acc)">
+        <span style="font-size:.78rem;color:var(--t2)">On change</span>
+      </label>
+    </div>
+  </aside>
+
+  <!-- Editor -->
+  <div class="editor-wrap" id="editor-wrap">
+    <div class="ph"><span class="pd"></span> Syntax Editor <span class="phr"><button class="btn bg bsm" onclick="renderNow()">▶ Render</button></span></div>
+    <textarea id="code" spellcheck="false" oninput="scheduleRender()" placeholder="Type diagram syntax here…"></textarea>
+  </div>
+
+  <div class="rsz" id="rsz"></div>
+
+  <!-- Preview -->
+  <div class="preview-wrap">
+    <div class="ph"><span class="pd g"></span> Preview <span class="phr" id="preview-info" style="font-size:.68rem;color:var(--t3)"></span></div>
+    <div class="preview-area" id="preview-area"></div>
+  </div>
 </div>
+
+<div class="statusbar">
+  <span class="sdot"></span>
+  <span id="status-engine" style="color:var(--acc-h);font-weight:600">Mermaid v11</span>
+  <span id="status-type" style="color:var(--t3)">flowchart</span>
+  <span style="margin-left:auto;font-size:.65rem;color:var(--t4)">Ctrl+Enter to render · SVG &amp; PNG export</span>
+</div>
+
+<footer class="seo-footer">
+  <div class="sfl">
+    <a href="https://universeinvedors.tech">Universe Invedors</a>
+    <a href="https://universeinvedors.tech/tools">All Tools</a>
+    <a href="https://code.universeinvedors.tech">Code</a>
+    <a href="https://chart.universeinvedors.tech">Charts</a>
+    <a href="https://ocr.universeinvedors.tech">OCR</a>
+    <a href="https://pdf.universeinvedors.tech">PDF</a>
+    <a href="https://image.universeinvedors.tech">Image</a>
+    <a href="https://3d.universeinvedors.tech">3D</a>
+    <a href="https://map.universeinvedors.tech">Maps</a>
+    <a href="https://media.universeinvedors.tech">Media</a>
+  </div>
+  <span>© 2024 Universe Invedors · Mermaid · Nomnoml · Free diagram tool</span>
+</footer>
+
+<div class="toasts" id="toasts"></div>
 
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
-mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' })
+import nomnoml from 'https://cdn.jsdelivr.net/npm/nomnoml@1.6.2/dist/nomnoml.esm.js'
 window.__mermaid = mermaid
+window.__nomnoml = nomnoml
 
 const EXAMPLES = {
-  flowchart: `flowchart TD
-    A[Start] --> B{Is it working?}
-    B -->|Yes| C[✅ Great!]
-    B -->|No| D[Debug the issue]
-    D --> E[Fix the bug]
-    E --> B
-    C --> F[Deploy 🚀]`,
-  sequence: `sequenceDiagram
-    participant User
+  flow:`flowchart TD
+    A([Start]) --> B{Authentication}
+    B -->|✓ Valid| C[Load Dashboard]
+    B -->|✗ Invalid| D[Show Error]
+    D --> E[Retry?]
+    E -->|Yes| B
+    E -->|No| F([End])
+    C --> G[Fetch User Data]
+    G --> H[Render UI]
+    H --> F`,
+  seq:`sequenceDiagram
+    autonumber
+    actor User
+    participant App
     participant API
     participant DB
-    User->>API: POST /login
+
+    User->>App: Submit Login Form
+    App->>API: POST /auth/login
     API->>DB: SELECT user WHERE email=?
     DB-->>API: User record
-    API->>API: Validate password
-    API-->>User: 200 OK + JWT token`,
-  class: `classDiagram
-    class Animal {
-      +String name
-      +int age
-      +makeSound() String
+    API->>API: Verify password hash
+    alt Valid Credentials
+        API-->>App: 200 OK + JWT token
+        App-->>User: Redirect to dashboard
+    else Invalid
+        API-->>App: 401 Unauthorized
+        App-->>User: Show error message
+    end`,
+  class:`classDiagram
+    class Vehicle {
+        +String make
+        +String model
+        +int year
+        +start() bool
+        +stop() void
     }
-    class Dog {
-      +fetch() void
+    class Car {
+        +int numDoors
+        +openTrunk() void
     }
-    class Cat {
-      +purr() void
+    class Truck {
+        +float payload
+        +attachTrailer() void
     }
-    Animal <|-- Dog
-    Animal <|-- Cat`,
-  er: `erDiagram
+    class ElectricVehicle {
+        +int batteryCapacity
+        +charge() void
+        +getRange() int
+    }
+    Vehicle <|-- Car
+    Vehicle <|-- Truck
+    Car <|-- ElectricVehicle`,
+  er:`erDiagram
     USER {
-      int id PK
-      string email
-      string name
-      datetime created_at
+        int    id          PK
+        string email       UK
+        string name
+        string role
+        date   created_at
     }
-    ORDER {
-      int id PK
-      int user_id FK
-      float total
-      string status
+    POST {
+        int    id          PK
+        int    user_id     FK
+        string title
+        text   content
+        string status
+        date   published_at
     }
-    USER ||--o{ ORDER : places`,
-  state: `stateDiagram-v2
+    COMMENT {
+        int    id          PK
+        int    post_id     FK
+        int    user_id     FK
+        text   body
+        date   created_at
+    }
+    TAG {
+        int    id          PK
+        string name        UK
+    }
+    POST_TAGS {
+        int    post_id     FK
+        int    tag_id      FK
+    }
+    USER ||--o{ POST : "writes"
+    POST ||--o{ COMMENT : "has"
+    USER ||--o{ COMMENT : "writes"
+    POST ||--o{ POST_TAGS : "tagged with"
+    TAG ||--o{ POST_TAGS : "applied to"`,
+  state:`stateDiagram-v2
     [*] --> Idle
-    Idle --> Loading : fetch()
-    Loading --> Success : data received
-    Loading --> Error : request failed
-    Error --> Idle : retry
-    Success --> [*]`,
-  gantt: `gantt
-    title Project Timeline
+    Idle --> Loading : user.submit()
+    Loading --> Success : data.received
+    Loading --> Error : request.failed
+    Error --> Idle : user.retry()
+    Error --> [*] : user.cancel()
+    Success --> Idle : user.reset()
+    Success --> [*] : session.end()
+
+    state Loading {
+        [*] --> Fetching
+        Fetching --> Parsing : response.ok
+        Parsing --> [*]
+    }`,
+  gantt:`gantt
+    title  Product Launch Timeline
     dateFormat  YYYY-MM-DD
+    excludes weekends
+
+    section Discovery
+    Market Research    :done,    res1, 2024-01-01, 10d
+    User Interviews    :done,    res2, after res1, 7d
+
     section Design
-    Wireframes      :a1, 2024-01-01, 7d
-    UI Design       :a2, after a1, 10d
-    section Dev
-    Frontend        :b1, after a2, 14d
-    Backend         :b2, after a2, 14d
+    Wireframes         :active,  des1, 2024-01-20, 7d
+    UI Design          :         des2, after des1, 10d
+    Design Review      :crit,    des3, after des2, 3d
+
+    section Development
+    Frontend           :         dev1, after des3, 14d
+    Backend API        :         dev2, after des3, 14d
+    Integration        :crit,    dev3, after dev1, 5d
+
     section Launch
-    QA Testing      :c1, after b1, 7d
-    Deploy          :c2, after c1, 2d`
+    QA Testing         :         qa1, after dev3, 7d
+    Deployment         :crit,    dep1, after qa1, 2d`,
+  git:`gitGraph LR
+    commit id: "init"
+    branch develop
+    checkout develop
+    commit id: "feat: auth"
+    commit id: "feat: dashboard"
+    branch feature/api
+    checkout feature/api
+    commit id: "feat: REST API"
+    commit id: "fix: validation"
+    checkout develop
+    merge feature/api
+    checkout main
+    merge develop id: "v1.0.0" tag: "release"
+    checkout develop
+    commit id: "feat: notifications"`,
+  pie:`pie title Tech Stack Usage
+    "React / Next.js" : 35
+    "Python / FastAPI" : 25
+    "Unity / C#" : 20
+    "Flutter" : 12
+    "AWS / DevOps" : 8`,
+  mindmap:`mindmap
+    root((Universe Invedors))
+        AI & ML
+            LLM Applications
+            Computer Vision
+            AI Agents
+        Spatial Computing
+            AR/VR/MR
+            Digital Twins
+            WebXR
+        Game Development
+            Unity Games
+            Multiplayer Systems
+            Mobile Games
+        Cloud Engineering
+            AWS Architecture
+            DevOps & CI/CD
+            Serverless`,
+  nom_uml:`[<abstract>Shape|+area(): float;+perimeter(): float]
+[Rectangle|+width: float;+height: float|+area(): float;+perimeter(): float]
+[Circle|+radius: float|+area(): float;+perimeter(): float]
+[Square|+side: float]
+
+[Shape] <:-- [Rectangle]
+[Shape] <:-- [Circle]
+[Rectangle] <:-- [Square]`,
+  nom_flow:`[<start>Start] -> [Validate Input]
+[Validate Input] -> [<decision>Valid?]
+[<decision>Valid?] -> [Process Data] : Yes
+[<decision>Valid?] -> [Show Error] : No
+[Process Data] -> [Save to DB]
+[Save to DB] -> [Send Notification]
+[Send Notification] -> [<end>Done]
+[Show Error] -> [<end>Done]`
 }
 
-let renderTimer = null
-let currentSVG = ''
+let engine = 'mermaid', theme = 'dark', currentSVG = '', renderTimer = null, uid = 0
 
-window.loadEx = (name, btn) => {
-  document.getElementById('editor').value = EXAMPLES[name]
-  document.querySelectorAll('.ex').forEach(e => e.classList.remove('active'))
+mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose', fontSize: 14 })
+
+window.loadEx = (name) => {
+  document.getElementById('code').value = EXAMPLES[name] || ''
+  document.querySelectorAll('.sbbtn').forEach(b => b.classList.remove('active'))
+  event.target.closest('.sbbtn').classList.add('active')
+  if (name.startsWith('nom_') && engine !== 'nomnoml') switchEngine('nomnoml', document.querySelectorAll('.et')[1])
+  else if (!name.startsWith('nom_') && engine !== 'mermaid') switchEngine('mermaid', document.querySelectorAll('.et')[0])
+  renderNow()
+}
+
+window.switchEngine = (eng, btn) => {
+  engine = eng
+  document.querySelectorAll('.et').forEach(t => t.classList.remove('active'))
   btn.classList.add('active')
-  render()
+  document.getElementById('status-engine').textContent = eng === 'mermaid' ? 'Mermaid v11' : eng === 'nomnoml' ? 'Nomnoml' : 'Railroad'
+  renderNow()
 }
 
-async function render() {
-  const code = document.getElementById('editor').value.trim()
-  const preview = document.getElementById('preview')
-  if (!code) { preview.innerHTML = '<p style="color:var(--muted);font-size:.85rem">Start typing Mermaid syntax…</p>'; return }
+window.changeTheme = (t) => {
+  theme = t
+  mermaid.initialize({ startOnLoad: false, theme: t, securityLevel: 'loose', fontSize: 14 })
+  renderNow()
+}
+
+async function renderMermaid(code) {
+  const id = 'mer-' + (++uid)
+  const { svg } = await window.__mermaid.render(id, code)
+  return svg
+}
+
+function renderNomnoml(code) {
+  return window.__nomnoml.renderSvg(code)
+}
+
+window.renderNow = async () => {
+  const code = document.getElementById('code').value.trim()
+  const area = document.getElementById('preview-area')
+  if (!code) { area.innerHTML = '<p style="color:var(--t3);font-size:.85rem">Start typing to see your diagram…</p>'; return }
   try {
-    const id = `m${Date.now()}`
-    const { svg } = await window.__mermaid.render(id, code)
+    let svg
+    if (engine === 'mermaid') {
+      svg = await renderMermaid(code)
+    } else if (engine === 'nomnoml') {
+      svg = renderNomnoml(code)
+    } else {
+      area.innerHTML = '<p style="color:var(--t3)">Railroad diagrams coming soon.</p>'; return
+    }
     currentSVG = svg
-    preview.innerHTML = svg
+    area.innerHTML = svg
+    // Fix SVG bg for dark theme
+    const svgEl = area.querySelector('svg')
+    if (svgEl) {
+      svgEl.style.maxWidth = '100%'
+      svgEl.style.height = 'auto'
+      document.getElementById('preview-info').textContent = `${svgEl.getAttribute('width')||'auto'} × ${svgEl.getAttribute('height')||'auto'}`
+    }
   } catch(e) {
-    preview.innerHTML = `<div class="error-msg">⚠️ Syntax error\n${e.message||e}</div>`
+    area.innerHTML = `<div class="err-msg">⚠ Syntax error\n\n${e.message || e}</div>`
   }
 }
 
 window.scheduleRender = () => {
+  if (!document.getElementById('auto-render').checked) return
   clearTimeout(renderTimer)
-  renderTimer = setTimeout(render, 500)
+  renderTimer = setTimeout(renderNow, 500)
+}
+
+window.copyCode = () => {
+  navigator.clipboard.writeText(document.getElementById('code').value)
+    .then(() => toast('Code copied', 'ok'))
 }
 
 window.copySVG = () => {
-  if (!currentSVG) return
-  navigator.clipboard.writeText(currentSVG).then(() => {
-    const b = document.querySelector('.btn-copy')
-    b.textContent = 'Copied!'
-    setTimeout(() => b.textContent = 'Copy SVG', 1500)
-  })
+  if (!currentSVG) { toast('Render a diagram first', 'err'); return }
+  navigator.clipboard.writeText(currentSVG).then(() => toast('SVG copied', 'ok'))
 }
 
 window.downloadSVG = () => {
-  if (!currentSVG) return
+  if (!currentSVG) { toast('Render a diagram first', 'err'); return }
   const a = document.createElement('a')
-  a.href = 'data:image/svg+xml,' + encodeURIComponent(currentSVG)
-  a.download = 'diagram.svg'
-  a.click()
+  a.href = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(currentSVG)
+  a.download = 'diagram.svg'; a.click()
 }
 
-// Init
-document.getElementById('editor').value = EXAMPLES.flowchart
-render()
-</script>
+window.downloadPNG = () => {
+  if (!currentSVG) { toast('Render a diagram first', 'err'); return }
+  const svgEl = document.querySelector('#preview-area svg')
+  if (!svgEl) return
+  const w = svgEl.getBoundingClientRect().width || 800
+  const h = svgEl.getBoundingClientRect().height || 600
+  const canvas = document.createElement('canvas')
+  canvas.width = w * 2; canvas.height = h * 2
+  const ctx = canvas.getContext('2d')
+  ctx.scale(2, 2)
+  const img = new Image()
+  img.onload = () => {
+    ctx.fillStyle = '#090c13'; ctx.fillRect(0, 0, w, h)
+    ctx.drawImage(img, 0, 0)
+    const a = document.createElement('a')
+    a.download = 'diagram.png'; a.href = canvas.toDataURL('image/png'); a.click()
+    toast('PNG downloaded', 'ok')
+  }
+  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(currentSVG)
+}
 
-<!-- SEO Footer — internal links to main site and sibling tools -->
-<footer style="padding:.75rem 1rem;border-top:1px solid rgba(255,255,255,.07);background:#0a0d13;font-family:'Inter',system-ui,sans-serif;font-size:.72rem;color:#6b7685;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;align-items:center;justify-content:space-between">
-  <div style="display:flex;flex-wrap:wrap;gap:.4rem .9rem;align-items:center">
-    <a href="https://universeinvedors.tech" style="color:#3b82f6;text-decoration:none" rel="noopener">Universe Invedors</a>
-    <span>·</span>
-    <a href="https://universeinvedors.tech/tools" style="color:#8b949e;text-decoration:none">All Tools</a>
-    <span>·</span>
-    <a href="https://code.universeinvedors.tech" style="color:#8b949e;text-decoration:none">Code</a>
-    <a href="https://diagram.universeinvedors.tech" style="color:#8b949e;text-decoration:none">Diagrams</a>
-    <a href="https://chart.universeinvedors.tech" style="color:#8b949e;text-decoration:none">Charts</a>
-    <a href="https://ocr.universeinvedors.tech" style="color:#8b949e;text-decoration:none">OCR</a>
-    <a href="https://pdf.universeinvedors.tech" style="color:#8b949e;text-decoration:none">PDF</a>
-    <a href="https://image.universeinvedors.tech" style="color:#8b949e;text-decoration:none">Image</a>
-    <a href="https://3d.universeinvedors.tech" style="color:#8b949e;text-decoration:none">3D</a>
-    <a href="https://map.universeinvedors.tech" style="color:#8b949e;text-decoration:none">Maps</a>
-    <a href="https://media.universeinvedors.tech" style="color:#8b949e;text-decoration:none">Media</a>
-  </div>
-  <div>
-    <a href="https://universeinvedors.tech/privacy" style="color:#6b7685;text-decoration:none">Privacy</a>
-    &nbsp;·&nbsp;
-    <span>&copy; 2024 Universe Invedors</span>
-  </div>
-</footer>
+// Resize
+;(function(){
+  const rsz = document.getElementById('rsz'), ew = document.getElementById('editor-wrap')
+  let drag = false, sx, sw
+  rsz.addEventListener('mousedown', e => { drag=true; sx=e.clientX; sw=ew.offsetWidth; document.body.style.cursor='col-resize'; document.body.style.userSelect='none' })
+  document.addEventListener('mousemove', e => { if(!drag)return; ew.style.width=Math.max(180,Math.min(window.innerWidth-200,sw+e.clientX-sx))+'px' })
+  document.addEventListener('mouseup', () => { drag=false; document.body.style.cursor=''; document.body.style.userSelect='' })
+})()
+
+// Keyboard
+document.addEventListener('keydown', e => { if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();renderNow()} })
+
+// Init
+document.getElementById('code').value = EXAMPLES.flow
+renderNow()
+
+window.toast = (msg, type='') => {
+  const el = document.createElement('div')
+  el.className='toast'+(type?' '+type:''); el.textContent=msg
+  document.getElementById('toasts').appendChild(el)
+  setTimeout(()=>el.remove(),2800)
+}
+</script>
 </body>
 </html>
