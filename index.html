@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Diagram Studio — Mermaid, PlantUML, Architecture Templates, Flowcharts, ERD, UML | Universe Invedors</title>
+<title>Diagram Studio � Mermaid, PlantUML, Architecture Templates, Flowcharts, ERD, UML | Universe Invedors</title>
 <meta name="description" content="Professional online diagram tool. Mermaid, Nomnoml, PlantUML-compatible syntax. 30+ architecture templates, flowcharts, ER diagrams, sequence, class, state, Gantt, C4, network diagrams. Export SVG/PNG."/>
 <meta name="keywords" content="online diagram tool,flowchart maker,sequence diagram,ER diagram,architecture diagram,UML diagram online,mermaid editor,free diagram creator,system design tool"/>
 <link rel="canonical" href="https://diagram.universeinvedors.tech/"/><meta name="robots" content="index,follow"/><meta name="author" content="Universe Invedors"/>
-<meta property="og:title" content="Diagram Studio — All Diagram Types, 30+ Templates, SVG Export"/><meta property="og:url" content="https://diagram.universeinvedors.tech/"/><meta property="og:type" content="website"/><meta property="og:image" content="https://universeinvedors.tech/og-image.jpg"/><meta property="og:site_name" content="Universe Invedors Tools"/>
+<meta property="og:title" content="Diagram Studio � All Diagram Types, 30+ Templates, SVG Export"/><meta property="og:url" content="https://diagram.universeinvedors.tech/"/><meta property="og:type" content="website"/><meta property="og:image" content="https://universeinvedors.tech/og-image.jpg"/><meta property="og:site_name" content="Universe Invedors Tools"/>
 <meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://universeinvedors.tech/og-image.jpg"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="icon" href="https://universeinvedors.tech/favicon.ico" sizes="any"/><meta name="theme-color" content="#090c13"/>
 <meta name="google-adsense-account" content="ca-pub-8759032363251002"/>
@@ -20,75 +20,95 @@ gtag('js',new Date());gtag('config','G-3GH7524RVW',{page_title:document.title,pa
 function gaEvent(action,category,label,value){gtag('event',action,{event_category:category,event_label:label,value:value});}
 </script>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Diagram Studio","url":"https://diagram.universeinvedors.tech","applicationCategory":"DeveloperApplication","operatingSystem":"Web","featureList":["Mermaid diagrams","Nomnoml UML","Architecture templates","ER diagrams","Sequence diagrams","SVG PNG export"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Universe Invedors","url":"https://universeinvedors.tech"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Universe Invedors","item":"https://universeinvedors.tech"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://universeinvedors.tech/tools"},{"@type":"ListItem","position":3,"name":"Diagram Studio","item":"https://diagram.universeinvedors.tech"}]}]</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#090c13;--surf:#0d1117;--elev:#141b28;--card:#1a2235;--inp:#111827;
-  --t1:#f0f4ff;--t2:#a8b5cc;--t3:#64748b;--t4:#3d4f6e;
-  --acc:#8b5cf6;--acc-h:#a78bfa;--acc-glow:rgba(139,92,246,.22);
-  --green:#10b981;--blue:#3b82f6;--cyan:#06b6d4;--orange:#f97316;
-  --border:rgba(255,255,255,.07);--bh:rgba(255,255,255,.13);
-  --font:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',Consolas,monospace;
-  --r:8px;--th:50px;--sw:220px;--tr:160ms cubic-bezier(.4,0,.2,1);
+  --bg-base:#03050a;--bg-surface:#080d15;--bg-elevated:#0d1421;--bg-card:#111b2e;--bg-input:#0d1421;
+  --text-1:#f0f4ff;--text-2:#a8b8cf;--text-3:#5a6a82;--text-4:#2e3d54;
+  --accent:#3b82f6;--accent-light:#60a5fa;--accent-subtle:rgba(59,130,246,.12);
+  --accent-border:rgba(59,130,246,.30);--accent-glow:rgba(59,130,246,.22);
+  --green:#10b981;--red:#ef4444;--yellow:#f59e0b;--cyan:#06b6d4;--violet:#8b5cf6;
+  --border:rgba(255,255,255,.07);--border-hover:rgba(255,255,255,.14);--border-focus:rgba(59,130,246,.50);
+  --shadow-md:0 4px 16px rgba(0,0,0,.50);--shadow-lg:0 12px 40px rgba(0,0,0,.60);
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',Consolas,monospace;
+  --r-sm:6px;--r-md:10px;--r-lg:14px;--r-xl:18px;
+  --topbar-h:52px;--t:180ms cubic-bezier(.4,0,.2,1);
 }
-html{font-size:16px}body{font-family:var(--font);background:var(--bg);color:var(--t1);height:100dvh;display:flex;flex-direction:column;overflow:hidden;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:3px}
-.topbar{height:var(--th);background:rgba(9,12,19,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.5rem;padding:0 .85rem;flex-shrink:0;z-index:200}
-.logo{font-size:.82rem;font-weight:700;color:var(--t1);text-decoration:none;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:.4rem}
-.logo:hover{color:var(--acc-h);text-decoration:none}
-.etabs{display:flex;gap:.1rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r);padding:3px;overflow-x:auto;flex-shrink:1}
-.et{padding:.26rem .7rem;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--t3);white-space:nowrap;transition:all var(--tr)}
-.et:hover{background:rgba(255,255,255,.06);color:var(--t2)}
-.et.active{background:var(--acc);color:#fff;box-shadow:0 0 10px var(--acc-glow)}
-.sp{flex:1}
-.btn{display:inline-flex;align-items:center;gap:.35rem;padding:.32rem .75rem;border-radius:var(--r);font-size:.73rem;font-weight:600;cursor:pointer;border:none;transition:all var(--tr);white-space:nowrap}
-.bg{background:rgba(255,255,255,.05);color:var(--t2);border:1px solid var(--border)}.bg:hover{background:rgba(255,255,255,.09);border-color:var(--bh);color:var(--t1)}
-.bp{background:var(--acc);color:#fff}.bp:hover{background:var(--acc-h)}
-.bgr{background:var(--green);color:#000}.bgr:hover{background:#0ea371}
-.bsm{padding:.22rem .55rem;font-size:.68rem}
-/* Layout */
-.main{display:flex;flex:1;overflow:hidden}
-.sidebar{width:var(--sw);background:var(--surf);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow:hidden}
-.sb-search{padding:.5rem;border-bottom:1px solid var(--border)}
-.sb-search input{width:100%;padding:.38rem .6rem;background:var(--inp);border:1px solid var(--border);border-radius:var(--r);color:var(--t1);font-size:.78rem;outline:none}
-.sb-search input:focus{border-color:rgba(139,92,246,.4)}
-.sb-scroll{flex:1;overflow-y:auto;padding:.4rem}
-.tpl-group{margin-bottom:.4rem}
-.tpl-label{font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--t4);padding:.4rem .35rem .15rem;display:flex;align-items:center;gap:.3rem;cursor:pointer}
-.tpl-list{}
-.tpl-item{display:flex;align-items:center;gap:.45rem;padding:.34rem .55rem;border-radius:6px;cursor:pointer;font-size:.77rem;color:var(--t2);transition:all var(--tr);border-left:2px solid transparent}
-.tpl-item:hover{background:rgba(139,92,246,.08);color:var(--t1);border-left-color:var(--acc)}
-.tpl-item.active{background:rgba(139,92,246,.12);color:var(--acc-h);border-left-color:var(--acc);font-weight:600}
-.tpl-icon{font-size:.88rem;width:18px;text-align:center;flex-shrink:0}
-/* Editor */
-.editor-area{display:flex;flex-direction:column;width:40%;min-width:200px;border-right:1px solid var(--border)}
-.ph{display:flex;align-items:center;gap:.5rem;padding:.35rem .75rem;background:var(--surf);border-bottom:1px solid var(--border);font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t3);flex-shrink:0}
-.pd{width:6px;height:6px;border-radius:50%;background:var(--acc)}
-.phr{margin-left:auto;display:flex;gap:.3rem}
-textarea#code{flex:1;width:100%;padding:.85rem;font-family:var(--mono);font-size:13px;line-height:1.6;background:var(--bg);color:var(--t1);border:none;resize:none;outline:none;tab-size:2;height:calc(100% - 36px)}
-textarea#code::selection{background:rgba(139,92,246,.3)}
-/* Preview */
-.preview-area{flex:1;display:flex;flex-direction:column;overflow:hidden}
-.preview-body{flex:1;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:1.5rem;background:rgba(255,255,255,.01)}
-.preview-body svg{max-width:100%;height:auto;filter:drop-shadow(0 4px 24px rgba(0,0,0,.4))}
-.err{color:#f87171;font-size:.8rem;padding:1rem;font-family:var(--mono);background:rgba(239,68,68,.06);border-radius:var(--r);margin:1rem;border:1px solid rgba(239,68,68,.2);white-space:pre-wrap;word-break:break-all}
-/* Info bar */
-.info-bar{display:flex;align-items:center;gap:.75rem;padding:.25rem .75rem;background:var(--surf);border-top:1px solid var(--border);font-size:.67rem;color:var(--t3);flex-shrink:0}
-.rsz{width:4px;background:var(--bg);cursor:col-resize;flex-shrink:0;transition:background .15s}.rsz:hover{background:var(--acc)}
-.seo-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.3rem .75rem;padding:.35rem .75rem;border-top:1px solid var(--border);background:var(--surf);font-size:.65rem;color:var(--t3);flex-shrink:0}
-.seo-footer a{color:var(--t3)}.seo-footer a:hover{color:var(--t2)}
-.sf-links{display:flex;flex-wrap:wrap;gap:.2rem .6rem}
-.toasts{position:fixed;bottom:2.5rem;right:1rem;z-index:999;display:flex;flex-direction:column;gap:.4rem;pointer-events:none}
-.toast{padding:.5rem .85rem;border-radius:var(--r);font-size:.75rem;font-weight:600;background:var(--card);border:1px solid var(--border);color:var(--t1);box-shadow:0 6px 24px rgba(0,0,0,.5);animation:tin .2s ease}
-.toast.ok{border-color:rgba(16,185,129,.35);color:var(--green)}.toast.err{border-color:rgba(239,68,68,.35);color:#f87171}.toast.info{border-color:rgba(139,92,246,.35);color:var(--acc-h)}
-@keyframes tin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){.sidebar{display:none}.editor-area{width:100%;border-right:none}.preview-area{display:none}}
-</style>
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-sans);background:var(--bg-base);color:var(--text-1);height:100dvh;display:flex;flex-direction:column;overflow:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.10);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.20)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--r-sm)}
+/* TOPBAR */
+.topbar{height:var(--topbar-h);background:rgba(3,5,10,.92);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.6rem;padding:0 1rem;flex-shrink:0;z-index:300}
+.topbar-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text-1);flex-shrink:0;transition:opacity var(--t)}
+.topbar-logo:hover{opacity:.8;text-decoration:none}
+.topbar-logo-mark{width:26px;height:26px;border-radius:var(--r-sm);background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.topbar-logo-mark svg{width:14px;height:14px}
+.topbar-logo-text{display:flex;flex-direction:column;line-height:1}
+.topbar-logo-company{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1)}
+.topbar-logo-tool{font-size:.67rem;font-weight:500;color:var(--text-3);margin-top:1px}
+.topbar-sep{width:1px;height:18px;background:var(--border);flex-shrink:0}
+.topbar-spacer,.sp{flex:1}
+.badge-free{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .55rem;border-radius:9999px;font-size:.67rem;font-weight:700;background:rgba(16,185,129,.10);color:var(--green);border:1px solid rgba(16,185,129,.22)}
+/* ENGINE TABS */
+.etabs{display:flex;gap:.1rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r-md);padding:2px;overflow-x:auto;flex-shrink:1}
+.et{display:inline-flex;align-items:center;gap:.3rem;padding:.26rem .7rem;border-radius:7px;font-size:.73rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--text-3);white-space:nowrap;transition:all var(--t)}
+.et:hover{background:rgba(255,255,255,.06);color:var(--text-2)}
+.et.active{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--accent-glow)}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.38rem .85rem;border-radius:var(--r-md);font-size:.78rem;font-weight:600;cursor:pointer;border:none;transition:all var(--t);white-space:nowrap;font-family:var(--font-sans)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:14px;height:14px;flex-shrink:0}
+.bg,.btn-ghost{background:rgba(255,255,255,.05);color:var(--text-2);border:1px solid var(--border)}
+.bg:hover,.btn-ghost:hover{background:rgba(255,255,255,.09);border-color:var(--border-hover);color:var(--text-1)}
+.bp,.btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 8px var(--accent-glow)}
+.bp:hover,.btn-primary:hover{background:var(--accent-light);box-shadow:0 4px 20px var(--accent-glow)}
+.bgr,.btn-success{background:var(--green);color:#000}
+.bgr:hover,.btn-success:hover{background:#0ea371}
+.bsm,.btn-sm{padding:.28rem .65rem;font-size:.72rem}
+.btn-violet{background:var(--violet);color:#fff}.btn-violet:hover{background:#7c3aed}
+.btn:disabled,.btn[disabled]{opacity:.4;cursor:not-allowed}
+/* PANES */
+.pane{display:flex;flex-direction:column;overflow:hidden}
+.pane-head,.ph{display:flex;align-items:center;gap:.5rem;padding:.42rem 1rem;background:var(--bg-surface);border-bottom:1px solid var(--border);font-size:.69rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);flex-shrink:0}
+.pd,.pane-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.phr,.pane-actions{margin-left:auto;display:flex;gap:.3rem}
+/* FORM */
+.fl,.field-label{font-size:.71rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:.3rem;display:block}
+.fi,input[type=text],input[type=number],select,textarea{width:100%;padding:.45rem .7rem;background:var(--bg-input);border:1px solid var(--border);border-radius:var(--r-md);color:var(--text-1);font-size:.84rem;font-family:var(--font-sans);outline:none;transition:border-color var(--t),box-shadow var(--t)}
+.fi:focus,input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.10)}
+select option{background:var(--bg-elevated)}
+input[type=range]{accent-color:var(--accent);width:100%}
+/* CARDS */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.1rem 1.25rem}
+.card:hover{border-color:var(--border-hover)}
+/* TOASTS */
+.toasts{position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;display:flex;flex-direction:column;gap:.45rem;pointer-events:none}
+.toast{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:var(--r-md);font-size:.8rem;font-weight:600;background:var(--bg-card);border:1px solid var(--border);color:var(--text-1);box-shadow:var(--shadow-lg);animation:toastIn .22s ease;pointer-events:auto}
+.toast.ok{border-color:rgba(16,185,129,.35);color:var(--green)}.toast.err{border-color:rgba(239,68,68,.35);color:#f87171}.toast.info{border-color:var(--accent-border);color:var(--accent-light)}
+@keyframes toastIn{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+/* SEO FOOTER */
+.seo-footer,.tool-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.4rem .9rem;padding:.6rem 1rem;border-top:1px solid var(--border);background:var(--bg-surface);font-size:.7rem;color:var(--text-3);flex-shrink:0}
+.seo-footer a,.tool-footer a{color:var(--text-3)}.seo-footer a:hover,.tool-footer a:hover{color:var(--text-2);text-decoration:none}
+.sf-links,.tool-footer-links{display:flex;flex-wrap:wrap;gap:.25rem .65rem}
 </head>
 <body>
 
 <header class="topbar">
-  <a href="https://universeinvedors.tech/tools" class="logo">🔀 <span style="color:var(--acc-h)">Diagram Studio</span></a>
+  <a href="https://universeinvedors.tech/tools" class="topbar-logo" aria-label="All Tools">
+    <div class="topbar-logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+    </div>
+    <div class="topbar-logo-text">
+      <span class="topbar-logo-company">Universe Invedors</span>
+      <span class="topbar-logo-tool">Diagram Studio</span>
+    </div>
+  </a>
+  <div class="topbar-sep"></div>
   <div class="etabs" role="tablist">
     <button class="et active" onclick="setEngine('mermaid',this)">Mermaid v11</button>
     <button class="et" onclick="setEngine('nomnoml',this)">Nomnoml</button>
@@ -104,9 +124,9 @@ textarea#code::selection{background:rgba(139,92,246,.3)}
     </select>
     <button class="btn bg bsm" onclick="copyCode()">Copy</button>
     <button class="btn bg bsm" onclick="copySVG()">Copy SVG</button>
-    <button class="btn bg bsm" onclick="downloadSVG()">↓ SVG</button>
-    <button class="btn bgr bsm" onclick="downloadPNG()">↓ PNG</button>
-    <button class="btn bp bsm" onclick="renderNow()">▶ Render</button>
+    <button class="btn bg bsm" onclick="downloadSVG()">? SVG</button>
+    <button class="btn bgr bsm" onclick="downloadPNG()">? PNG</button>
+    <button class="btn bp bsm" onclick="renderNow()">? Render</button>
   </div>
 </header>
 
@@ -114,7 +134,7 @@ textarea#code::selection{background:rgba(139,92,246,.3)}
   <!-- Sidebar templates -->
   <aside class="sidebar">
     <div class="sb-search">
-      <input type="text" placeholder="Search templates…" oninput="filterTemplates(this.value)">
+      <input type="text" placeholder="Search templates�" oninput="filterTemplates(this.value)">
     </div>
     <div class="sb-scroll" id="template-list"></div>
   </aside>
@@ -137,7 +157,7 @@ textarea#code::selection{background:rgba(139,92,246,.3)}
 <div class="info-bar">
   <span id="ib-engine" style="color:var(--acc-h);font-weight:600">Mermaid</span>
   <span id="ib-type" style="color:var(--t3)">flowchart</span>
-  <span style="margin-left:auto;font-size:.65rem;color:var(--t4)">Ctrl+Enter render · Double-click to finish polygon/polyline</span>
+  <span style="margin-left:auto;font-size:.65rem;color:var(--t4)">Ctrl+Enter render � Double-click to finish polygon/polyline</span>
 </div>
 
 <footer class="seo-footer">
@@ -148,7 +168,7 @@ textarea#code::selection{background:rgba(139,92,246,.3)}
     <a href="https://image.universeinvedors.tech">Image</a><a href="https://3d.universeinvedors.tech">3D</a>
     <a href="https://map.universeinvedors.tech">Maps</a><a href="https://media.universeinvedors.tech">Media</a>
   </div>
-  <span>© 2024 Universe Invedors · Mermaid · Nomnoml · PlantUML · Free Diagram Tool</span>
+  <span>� 2024 Universe Invedors � Mermaid � Nomnoml � PlantUML � Free Diagram Tool</span>
 </footer>
 <div class="toasts" id="toasts"></div>
 
@@ -157,22 +177,22 @@ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.mi
 import nomnoml from 'https://cdn.jsdelivr.net/npm/nomnoml@1.6.2/dist/nomnoml.esm.js'
 window.__mermaid = mermaid; window.__nomnoml = nomnoml
 
-// ── TEMPLATES ─────────────────────────────────────────────
+// -- TEMPLATES ---------------------------------------------
 const TEMPLATES = {
   'Flowcharts': [
-    { name:'Basic Flowchart', icon:'🔀', engine:'mermaid', code:`flowchart TD
-    A([🚀 Start]) --> B{Validate Input}
+    { name:'Basic Flowchart', icon:'??', engine:'mermaid', code:`flowchart TD
+    A([?? Start]) --> B{Validate Input}
     B -->|Valid| C[Process Data]
     B -->|Invalid| D[Show Error]
     D --> E{Retry?}
     E -->|Yes| A
-    E -->|No| F([🏁 End])
+    E -->|No| F([?? End])
     C --> G[Save to Database]
     G --> H[Send Notification]
     H --> F
     style A fill:#1e3a5f,stroke:#3b82f6,color:#fff
     style F fill:#1e3a5f,stroke:#3b82f6,color:#fff` },
-    { name:'Decision Tree', icon:'🌳', engine:'mermaid', code:`flowchart LR
+    { name:'Decision Tree', icon:'??', engine:'mermaid', code:`flowchart LR
     Root{Should we build\nor buy?}
     Root -->|Build| B1{Team capacity?}
     Root -->|Buy| C1{Budget?}
@@ -182,13 +202,13 @@ const TEMPLATES = {
     C1 -->|Limited| C3[Open source?]
     C3 -->|Yes| C4[OSS solution]
     C3 -->|No| B3
-    B2 --> D[✅ Ship it]
+    B2 --> D[? Ship it]
     B3 --> D
     C2 --> D
     C4 --> D` },
   ],
   'System Design': [
-    { name:'Microservices', icon:'🏗', engine:'mermaid', code:`flowchart TB
+    { name:'Microservices', icon:'??', engine:'mermaid', code:`flowchart TB
     Client([Client]) --> Gateway[API Gateway]
     Gateway --> Auth[Auth Service]
     Gateway --> Users[User Service]
@@ -204,8 +224,8 @@ const TEMPLATES = {
     Gateway -.->|metrics| Prometheus[Prometheus]
     style Gateway fill:#1e3a5f,stroke:#3b82f6
     style Queue fill:#2d1b69,stroke:#8b5cf6` },
-    { name:'AWS Architecture', icon:'☁', engine:'mermaid', code:`flowchart TB
-    User([👤 User]) --> CF[CloudFront CDN]
+    { name:'AWS Architecture', icon:'?', engine:'mermaid', code:`flowchart TB
+    User([?? User]) --> CF[CloudFront CDN]
     CF --> S3[S3 Static Assets]
     CF --> ALB[Application Load Balancer]
     ALB --> ECS1[ECS Container 1]
@@ -220,20 +240,20 @@ const TEMPLATES = {
     ALB -.->|logs| CloudWatch[CloudWatch]
     style CF fill:#f59e0b20,stroke:#f59e0b
     style ALB fill:#3b82f620,stroke:#3b82f6` },
-    { name:'C4 Context', icon:'📐', engine:'mermaid', code:`flowchart TB
-    User([👤 Customer]) --> WebApp[🌐 Web Application\n--\nReact SPA]
-    User --> MobileApp[📱 Mobile App\n--\nFlutter]
-    WebApp --> API[⚙ Backend API\n--\nNode.js/FastAPI]
+    { name:'C4 Context', icon:'??', engine:'mermaid', code:`flowchart TB
+    User([?? Customer]) --> WebApp[?? Web Application\n--\nReact SPA]
+    User --> MobileApp[?? Mobile App\n--\nFlutter]
+    WebApp --> API[? Backend API\n--\nNode.js/FastAPI]
     MobileApp --> API
-    API --> DB[(🗄 Database\n--\nPostgreSQL)]
-    API --> Cache[(⚡ Cache\n--\nRedis)]
-    API --> ExtEmail[📧 Email Service\n--\nSendGrid]
-    API --> ExtPayment[💳 Payment\n--\nStripe]
-    Admin([👨‍💼 Admin]) --> AdminPanel[🔧 Admin Panel]
+    API --> DB[(?? Database\n--\nPostgreSQL)]
+    API --> Cache[(? Cache\n--\nRedis)]
+    API --> ExtEmail[?? Email Service\n--\nSendGrid]
+    API --> ExtPayment[?? Payment\n--\nStripe]
+    Admin([????? Admin]) --> AdminPanel[?? Admin Panel]
     AdminPanel --> API` },
   ],
   'Sequence Diagrams': [
-    { name:'API Auth Flow', icon:'🔐', engine:'mermaid', code:`sequenceDiagram
+    { name:'API Auth Flow', icon:'??', engine:'mermaid', code:`sequenceDiagram
     autonumber
     actor User
     participant App as Client App
@@ -259,7 +279,7 @@ const TEMPLATES = {
         Auth-->>App: 401 Unauthorized
         App-->>User: Show error
     end` },
-    { name:'Checkout Flow', icon:'🛒', engine:'mermaid', code:`sequenceDiagram
+    { name:'Checkout Flow', icon:'??', engine:'mermaid', code:`sequenceDiagram
     actor Customer
     participant Cart
     participant Payment as Payment Gateway
@@ -269,7 +289,7 @@ const TEMPLATES = {
 
     Customer->>Cart: Add item to cart
     Cart->>Inventory: Check availability
-    Inventory-->>Cart: In stock ✓
+    Inventory-->>Cart: In stock ?
     Customer->>Cart: Proceed to checkout
     Cart->>Payment: Initiate payment
     Payment-->>Customer: Payment form
@@ -279,10 +299,10 @@ const TEMPLATES = {
     Orders->>Inventory: Reserve items
     Orders->>Email: Send confirmation
     Orders-->>Cart: Order #12345 created
-    Cart-->>Customer: Order confirmed 🎉` },
+    Cart-->>Customer: Order confirmed ??` },
   ],
   'ER Diagrams': [
-    { name:'E-Commerce ERD', icon:'🛍', engine:'mermaid', code:`erDiagram
+    { name:'E-Commerce ERD', icon:'??', engine:'mermaid', code:`erDiagram
     CUSTOMER {
         uuid    id          PK
         string  email       UK
@@ -326,7 +346,7 @@ const TEMPLATES = {
     CATEGORY ||--o{ CATEGORY : "has sub"` },
   ],
   'Class Diagrams': [
-    { name:'Design Patterns', icon:'🏛', engine:'mermaid', code:`classDiagram
+    { name:'Design Patterns', icon:'??', engine:'mermaid', code:`classDiagram
     class EventEmitter {
         -Map~string,Function[]~ listeners
         +on(event, fn) EventEmitter
@@ -366,7 +386,7 @@ const TEMPLATES = {
     AbstractFactory <|-- LightThemeFactory` },
   ],
   'State Machines': [
-    { name:'Order State Machine', icon:'⚙', engine:'mermaid', code:`stateDiagram-v2
+    { name:'Order State Machine', icon:'?', engine:'mermaid', code:`stateDiagram-v2
     [*] --> Draft : create()
     Draft --> Pending : submit()
     Pending --> Confirmed : confirm()
@@ -391,10 +411,10 @@ const TEMPLATES = {
     }` },
   ],
   'Network': [
-    { name:'Network Topology', icon:'🌐', engine:'mermaid', code:`flowchart TB
-    Internet([🌍 Internet])
-    Internet --> FW1[🔥 Firewall\nPrimary]
-    Internet --> FW2[🔥 Firewall\nSecondary]
+    { name:'Network Topology', icon:'??', engine:'mermaid', code:`flowchart TB
+    Internet([?? Internet])
+    Internet --> FW1[?? Firewall\nPrimary]
+    Internet --> FW2[?? Firewall\nSecondary]
     FW1 --> DMZ[DMZ Zone]
     FW2 --> DMZ
     DMZ --> WAF[WAF / Proxy]
@@ -411,8 +431,8 @@ const TEMPLATES = {
     style FW2 fill:#4c1d24,stroke:#ef4444` },
   ],
   'Gantt Charts': [
-    { name:'Sprint Timeline', icon:'📅', engine:'mermaid', code:`gantt
-    title  Sprint 14 — Q4 2024
+    { name:'Sprint Timeline', icon:'??', engine:'mermaid', code:`gantt
+    title  Sprint 14 � Q4 2024
     dateFormat  YYYY-MM-DD
     excludes    weekends
 
@@ -437,7 +457,7 @@ const TEMPLATES = {
     Production deploy     :crit,    dep, after qa2, 1d` },
   ],
   'Git Graphs': [
-    { name:'Git Flow', icon:'🌿', engine:'mermaid', code:`gitGraph LR
+    { name:'Git Flow', icon:'??', engine:'mermaid', code:`gitGraph LR
     commit id: "initial" tag: "v0.1.0"
     branch develop
     checkout develop
@@ -460,12 +480,12 @@ const TEMPLATES = {
     commit id: "bump version" tag: "v1.0.0-rc1"
     commit id: "fix edge case" tag: "v1.0.0"
     checkout main
-    merge release/1.0 tag: "v1.0.0 🚀"
+    merge release/1.0 tag: "v1.0.0 ??"
     checkout develop
     merge main` },
   ],
   'Mind Maps': [
-    { name:'Software Architecture', icon:'🧠', engine:'mermaid', code:`mindmap
+    { name:'Software Architecture', icon:'??', engine:'mermaid', code:`mindmap
     root((Software\nArchitecture))
         Frontend
             React / Next.js
@@ -509,7 +529,7 @@ const TEMPLATES = {
                 ArgoCD` },
   ],
   'Nomnoml UML': [
-    { name:'Class Diagram', icon:'📐', engine:'nomnoml', code:`#background: #090c13
+    { name:'Class Diagram', icon:'??', engine:'nomnoml', code:`#background: #090c13
 #fill: #1a2235; #2a3448
 #stroke: #3b82f6
 #fontColor: #c9d1d9
@@ -549,7 +569,7 @@ const TEMPLATES = {
 [Animal] <:-- [Dog]
 [Animal] <:-- [Cat]
 [PetOwner] o--> [Animal]: owns` },
-    { name:'System Components', icon:'🔧', engine:'nomnoml', code:`#background: #090c13
+    { name:'System Components', icon:'??', engine:'nomnoml', code:`#background: #090c13
 #fill: #1a2235; #111827
 #stroke: #8b5cf6
 #fontColor: #c9d1d9
@@ -583,7 +603,7 @@ const TEMPLATES = {
 [Auth Service] -> [Redis]` },
   ],
   'PlantUML (Preview)': [
-    { name:'Use Case Diagram', icon:'👤', engine:'plantuml', code:`@startuml
+    { name:'Use Case Diagram', icon:'??', engine:'plantuml', code:`@startuml
 !theme crt-green
 title E-Commerce Use Cases
 
@@ -620,7 +640,7 @@ let allTemplates = Object.entries(TEMPLATES).flatMap(([cat, items]) => items.map
 
 mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose', fontSize: 14 })
 
-// ── RENDER TEMPLATES SIDEBAR ──────────────────────────────
+// -- RENDER TEMPLATES SIDEBAR ------------------------------
 function renderTemplateList(filter = '') {
   const list = document.getElementById('template-list')
   const q = filter.toLowerCase()
@@ -633,7 +653,7 @@ function renderTemplateList(filter = '') {
 
   list.innerHTML = Object.entries(TEMPLATES).map(([cat, items]) => `
     <div class="tpl-group">
-      <div class="tpl-label">📂 ${cat}</div>
+      <div class="tpl-label">?? ${cat}</div>
       <div class="tpl-list">${items.map(t => `<div class="tpl-item" onclick='loadTemplate(${JSON.stringify(t)})'><span class="tpl-icon">${t.icon}</span>${t.name}</div>`).join('')}</div>
     </div>`).join('')
 }
@@ -648,7 +668,7 @@ window.loadTemplate = (t) => {
   renderNow()
 }
 
-// ── ENGINE SWITCHER ────────────────────────────────────────
+// -- ENGINE SWITCHER ----------------------------------------
 window.setEngine = (eng, btn) => {
   engine = eng
   document.querySelectorAll('.et').forEach(t => t.classList.remove('active'))
@@ -664,11 +684,11 @@ window.changeTheme = (t) => {
   renderNow()
 }
 
-// ── RENDER ─────────────────────────────────────────────────
+// -- RENDER -------------------------------------------------
 window.renderNow = async () => {
   const code = document.getElementById('code').value.trim()
   const body = document.getElementById('preview-body')
-  if (!code) { body.innerHTML = '<p style="color:var(--t3);font-size:.85rem">Start typing to see your diagram…</p>'; return }
+  if (!code) { body.innerHTML = '<p style="color:var(--t3);font-size:.85rem">Start typing to see your diagram�</p>'; return }
 
   try {
     let svg
@@ -693,10 +713,10 @@ window.renderNow = async () => {
     const svgEl = body.querySelector('svg')
     if (svgEl) {
       svgEl.style.maxWidth = '100%'; svgEl.style.height = 'auto'
-      document.getElementById('preview-info').textContent = `${Math.round(svgEl.getBoundingClientRect().width)}×${Math.round(svgEl.getBoundingClientRect().height)}px`
+      document.getElementById('preview-info').textContent = `${Math.round(svgEl.getBoundingClientRect().width)}�${Math.round(svgEl.getBoundingClientRect().height)}px`
     }
   } catch(e) {
-    body.innerHTML = `<div class="err">⚠ Syntax Error\n\n${e.message || e}</div>`
+    body.innerHTML = `<div class="err">? Syntax Error\n\n${e.message || e}</div>`
   }
 }
 
@@ -706,7 +726,7 @@ window.scheduleRender = () => {
   renderTimer = setTimeout(renderNow, 450)
 }
 
-// ── PLANTUML ENCODING ──────────────────────────────────────
+// -- PLANTUML ENCODING --------------------------------------
 function encodePlantUML(text) {
   const data = new TextEncoder().encode(text)
   const deflated = pako_deflate(data)
@@ -726,7 +746,7 @@ function encode64(data) {
   return result
 }
 
-// ── EXPORTS ────────────────────────────────────────────────
+// -- EXPORTS ------------------------------------------------
 window.copyCode = () => navigator.clipboard.writeText(document.getElementById('code').value).then(() => toast('Code copied','ok'))
 window.copySVG = () => { if (!currentSVG) { toast('Render a diagram first','err'); return }; navigator.clipboard.writeText(currentSVG).then(() => toast('SVG copied','ok')) }
 window.downloadSVG = () => {
@@ -748,7 +768,7 @@ window.downloadPNG = () => {
   img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(currentSVG)
 }
 
-// ── RESIZER ────────────────────────────────────────────────
+// -- RESIZER ------------------------------------------------
 ;(function(){
   const rsz = document.getElementById('rsz'), ew = document.getElementById('editor-wrap')
   let drag = false, sx, sw
@@ -780,7 +800,7 @@ renderNow()
 </body>
 </html>
 <script>
-// GA4 Custom Events — Diagram Maker
+// GA4 Custom Events � Diagram Maker
 (function(){
   // Track diagram type/engine switches
   document.querySelectorAll('.tab,.et,[data-engine],[onclick*="engine"],[onclick*="Engine"]').forEach(function(tab){
@@ -803,3 +823,26 @@ renderNow()
   });
 })();
 </script>
+
+
+/* Diagram-specific */
+.main{display:flex;flex:1;overflow:hidden}
+.sidebar{width:220px;background:var(--bg-surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow:hidden}
+.sb-search{padding:.5rem;border-bottom:1px solid var(--border)}
+.sb-scroll{flex:1;overflow-y:auto;padding:.4rem}
+.tpl-group{margin-bottom:.4rem}
+.tpl-label{font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text-4);padding:.4rem .35rem .15rem;display:flex;align-items:center;gap:.3rem;cursor:pointer}
+.tpl-item{display:flex;align-items:center;gap:.45rem;padding:.34rem .55rem;border-radius:var(--r-sm);cursor:pointer;font-size:.77rem;color:var(--text-2);transition:all var(--t);border-left:2px solid transparent}
+.tpl-item:hover{background:var(--accent-subtle);color:var(--text-1);border-left-color:var(--accent)}
+.tpl-item.active{background:var(--accent-subtle);color:var(--accent-light);border-left-color:var(--accent);font-weight:600}
+.tpl-icon{font-size:.88rem;width:18px;text-align:center;flex-shrink:0}
+.editor-area{display:flex;flex-direction:column;width:40%;min-width:200px;border-right:1px solid var(--border)}
+textarea#code{flex:1;width:100%;padding:.85rem;font-family:var(--font-mono);font-size:13px;line-height:1.6;background:var(--bg-base);color:var(--text-1);border:none;resize:none;outline:none;tab-size:2;height:calc(100% - 36px)}
+textarea#code::selection{background:rgba(59,130,246,.25)}
+.preview-area{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.preview-body{flex:1;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:1.5rem;background:rgba(255,255,255,.01)}
+.preview-body svg{max-width:100%;height:auto;filter:drop-shadow(0 4px 24px rgba(0,0,0,.4))}
+.err-msg,.err{color:#f87171;font-size:.8rem;padding:1rem;font-family:var(--font-mono);background:rgba(239,68,68,.06);border-radius:var(--r-md);margin:1rem;border:1px solid rgba(239,68,68,.2);white-space:pre-wrap;word-break:break-all}
+.rsz{width:4px;background:var(--bg-base);cursor:col-resize;flex-shrink:0;transition:background var(--t)}.rsz:hover{background:var(--accent)}
+.info-bar{display:flex;align-items:center;gap:.75rem;padding:.25rem .75rem;background:var(--bg-surface);border-top:1px solid var(--border);font-size:.67rem;color:var(--text-3);flex-shrink:0}
+</style>
