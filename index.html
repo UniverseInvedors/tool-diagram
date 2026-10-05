@@ -9,7 +9,8 @@
 <link rel="canonical" href="https://diagram.universeinvedors.tech/"/><meta name="robots" content="index,follow"/><meta name="author" content="Universe Invedors"/>
 <meta property="og:title" content="Diagram Studio — All Diagram Types, 30+ Templates, SVG Export"/><meta property="og:url" content="https://diagram.universeinvedors.tech/"/><meta property="og:type" content="website"/><meta property="og:image" content="https://universeinvedors.tech/og-image.jpg"/><meta property="og:site_name" content="Universe Invedors Tools"/>
 <meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://universeinvedors.tech/og-image.jpg"/>
-<link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="icon" href="https://universeinvedors.tech/favicon.ico" sizes="any"/><meta name="theme-color" content="#090c13"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="icon" href="https://universeinvedors.tech/favicon.ico" sizes="any"/>
+<link rel="manifest" href="/manifest.json"/><meta name="theme-color" content="#090c13"/>
 <meta name="google-adsense-account" content="ca-pub-8759032363251002"/>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8759032363251002" crossorigin="anonymous"></script>
 <!-- Google Analytics 4 -->
@@ -796,6 +797,9 @@ renderTemplateList()
 const firstTemplate = allTemplates[0]
 document.getElementById('code').value = firstTemplate.code
 renderNow()
+</script>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){})}
 </script>
 </body>
 </html>
